@@ -1,6 +1,8 @@
-# Little Printer Astronomy Picture of the Day
+# Astronomy Picture of the Day
 
 A little web app that brings NASA's [Astronomy Picture of the Day](http://apod.nasa.gov/) ("APOD") to your [Little Printer](http://bergcloud.com/littleprinter/). Due to the technical quality of the printouts, this app mainly serves for educational services.
+
+You will notice a grey background when opening `sample/index.htm` on your desktop browser. This should give an impression of the printout's dimensions, but will not be printed itself. Also, the viewport of the page is suitable for smart phones of all kinds.
 
 ## Contributing
 
