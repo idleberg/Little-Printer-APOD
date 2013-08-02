@@ -4,6 +4,8 @@ A little web app that brings NASA's [Astronomy Picture of the Day](http://apod.n
 
 You will notice a grey background when opening `sample/index.htm` on your desktop browser. This should give an impression of the printout's dimensions, but will not be printed itself. Also, the viewport of the page is suitable for smart phones of all kinds.
 
+![Screenshot](https://raw.github.com/idleberg/Little-Printer-APOD/master/preview.jpg)
+
 ## Contributing
 
 Feel free to submit improvements or bug-fixes to this repository!
