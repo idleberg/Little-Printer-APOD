@@ -1,0 +1,38 @@
+html {
+    background-color: #eee;
+}
+body {
+    background-color: #fff;
+    border-top: 4px solid #000;
+    border-bottom: 8px solid #000;
+    font-family: 'Trebuchet MS';
+    margin: auto ;
+    max-height: 800px;
+    padding: 24px 0 32px 0;
+    text-align: center;
+    width:384px;
+}
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+img {
+    width: 384px;
+    height: auto;
+}
+p {
+	margin: 12px;
+}
+.credit {
+	font-size: 12px;
+}
+h2 {
+    font-family: 'Amaranth', 'GillSans';
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
+}
+.uppercase {
+    text-transform: uppercase;
+}
