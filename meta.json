@@ -1,7 +1,7 @@
 {
     "owner_email" : "example@example.com",
     "publication_api_version":"1.0",
-    "name": "FAstronomy Picture of the Day",
+    "name": "Astronomy Picture of the Day",
     "description": "Each day a different image or photograph of our fascinating universe is printed",
     "delivered_on": "every day",
     "send_timezone_info": false,
