@@ -12,10 +12,22 @@ body {
     text-align: center;
     width:384px;
 }
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 h1 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 32px;
+}
+h2 {
+    font-family: 'Amaranth', 'GillSans';
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
 }
 img {
     width: 384px;
@@ -26,12 +38,6 @@ p {
 }
 .credit {
 	font-size: 12px;
-}
-h2 {
-    font-family: 'Amaranth', 'GillSans';
-    font-size: 20px;
-    font-style: italic;
-    font-weight: normal;
 }
 .uppercase {
     text-transform: uppercase;
