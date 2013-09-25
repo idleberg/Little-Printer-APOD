@@ -1,15 +1,16 @@
-html {
-    background-color: #eee;
-}
 body {
+    background-color: #eee;
+    font-family: 'Trebuchet MS';
+    text-align: center;
+    margin: 0;
+}
+#main {
     background-color: #fff;
     border-top: 4px solid #000;
     border-bottom: 8px solid #000;
-    font-family: 'Trebuchet MS';
     margin: auto ;
     max-height: 800px;
     padding: 24px 0 32px 0;
-    text-align: center;
     width:384px;
 }
 a {
