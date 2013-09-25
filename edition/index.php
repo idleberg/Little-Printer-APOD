@@ -46,7 +46,7 @@
 	<link rel="stylesheet" href="http://<?php echo $_SERVER['HTTP_HOST'] ?>/style.css" media="screen" type="text/css" />
 </head>
 <body>
-	<div id="wrap">
+	<div id="main">
 		<h1 class="uppercase">Astronomy Picture of the Day</h1>
 		
 		<?php if (isset($error)) {
