@@ -4,7 +4,7 @@ body {
     text-align: center;
     margin: 0;
 }
-#main {
+#wrap {
     background-color: #fff;
     border-top: 4px solid #000;
     border-bottom: 8px solid #000;
