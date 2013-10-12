@@ -1,38 +1,54 @@
 <?php
+	// Show no warnings
+	error_reporting(E_ERROR | E_PARSE);
+
 	// Set headers
 	$date = date(z);
 	$md5 = md5($date);
 	header("ETag: ".$md5);
 	header("Content-Type: text/html; charset=utf-8");
 
+	// Set default timeout
+	$timeout = stream_context_create(array( 
+	    'http' => array( 
+	        'timeout' => 3
+	        ) 
+	    ) 
+	); 
+
 	// Get link for latest post
-	$rss = file_get_contents('http://apod.nasa.gov/apod.rss');
-	$rss = new SimpleXMLElement($rss);
+	$rss = file_get_contents('http://apod.nasa.gov/apod.rss', 0, $timeout);
+	if ($rss === false)  { 
+	    print "Service currently unavailable, please try again later!";
+	    return;
+	} else { 
+	    $rss = new SimpleXMLElement($rss);
 
-	// Get HTML for latest post
-	$html = file_get_contents($rss->channel->item[0]->link);
+	    // Get HTML for latest post
+		$html = file_get_contents($rss->channel->item[0]->link);
 
-	$doc = new DOMDocument();
-	$doc->strictErrorChecking = false;
-	$doc->recover=true;
-	@$doc->loadHTML("<html><body>".$html."</body></html>");
+		$doc = new DOMDocument();
+		$doc->strictErrorChecking = false;
+		$doc->recover=true;
+		@$doc->loadHTML("<html><body>".$html."</body></html>");
 
-	// Get first image
-	$img = $doc->getElementsByTagName('img')->item(0);
+		// Get first image
+		$img = $doc->getElementsByTagName('img')->item(0);
 
-	if ($img == NULL) {
-		$error = "Error retrieving image, please try again later";
-	} else {	
-		// Get image title
-		$title = $doc->getElementsByTagName('b')->item(0)->nodeValue;
-		$title = trim($title);
+		if ($img == NULL) {
+			$error = "Error retrieving image, please try again later";
+		} else {	
+			// Get image title
+			$title = $doc->getElementsByTagName('b')->item(0)->nodeValue;
+			$title = trim($title);
 
-		// Get credits
-		$credit = $doc->getElementsByTagName('center')->item(1)->nodeValue;
-		$credit = strip_tags($credit);
-		$credit = str_replace($title , NULL, $credit); 
-		$credit = str_replace("Image Credit &\nCopyright:", NULL, $credit);
-		$credit = trim($credit);
+			// Get credits
+			$credit = $doc->getElementsByTagName('center')->item(1)->nodeValue;
+			$credit = strip_tags($credit);
+			$credit = str_replace($title , NULL, $credit); 
+			$credit = str_replace("Image Credit &\nCopyright:", NULL, $credit);
+			$credit = trim($credit);
+		}
 	}
  ?>
 
