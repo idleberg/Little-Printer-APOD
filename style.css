@@ -8,10 +8,10 @@ body {
     background-color: #fff;
     border-top: 4px solid #000;
     border-bottom: 8px solid #000;
-    margin: auto ;
+    margin: auto;
     max-height: 800px;
     padding: 24px 0 32px 0;
-    width:384px;
+    width: 384px;
 }
 a {
     text-decoration: none;
@@ -34,6 +34,7 @@ h2 {
 img {
     width: 384px;
     height: auto;
+    max-height: 550px;
 }
 p {
 	margin: 12px;
