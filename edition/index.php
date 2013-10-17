@@ -59,7 +59,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=384">
 	<!-- BERG Cloud doesn't allow the usage of relative URLs, you might have to fix the next line to work for you (http://remote.bergcloud.com/developers/faq/) -->
-	<link rel="stylesheet" href="http://<?php echo $_SERVER['HTTP_HOST'] ?>/style.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="<?php echo dirname($_SERVER['SCRIPT_URI']) ?>/style.css" media="screen" type="text/css" />
 </head>
 <body>
 	<div id="main">
