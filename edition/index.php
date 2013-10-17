@@ -52,7 +52,7 @@
 	}
  ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>Astronomy Picture of the Day</title>
@@ -68,7 +68,7 @@
 		<?php if (isset($error)) {
 			echo "<p class=\"uppercase credit\">$error</p>";
 		} else { ?>
-		  	<img class="dither" src="http://apod.nasa.gov/<?php echo $img->attributes->getNamedItem("src")->value; ?>" />
+		  	<img class="dither" src="http://apod.nasa.gov/<?php echo $img->attributes->getNamedItem("src")->value; ?>" alt="<?php echo $title ?>" />
 			<h2>&#8220;<?php echo $title ?>&#8221;</h2>
 			<p class="uppercase credit">&copy; <? echo $credit ?></p>
 			<p class="credit"><a href="http://apod.nasa.gov">apod.nasa.gov</a></p>
