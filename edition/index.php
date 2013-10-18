@@ -19,7 +19,7 @@
 	// Get link for latest post
 	$rss = file_get_contents('http://apod.nasa.gov/apod.rss', 0, $timeout);
 	if ($rss === false)  { 
-	    print "Service currently unavailable, please try again later!";
+	    print "Service currently unavailable, please try again later! If this problem persists, please report the issue at https://github.com/idleberg/Little-Printer-APOD/issues";
 	    return;
 	} else { 
 	    $rss = new SimpleXMLElement($rss);
