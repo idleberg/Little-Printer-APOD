@@ -3,28 +3,28 @@
 	error_reporting(E_ERROR | E_PARSE);
 
 	// Set headers
-	$date = date(z);
+	$date = date("z");
 	$md5 = md5($date);
 	header("ETag: ".$md5);
 	header("Content-Type: text/html; charset=utf-8");
 
 	// Set default timeout
 	$timeout = stream_context_create(array( 
-	    'http' => array( 
-	        'timeout' => 3
-	        ) 
-	    ) 
+		'http' => array( 
+			'timeout' => 3
+			) 
+		) 
 	); 
 
 	// Get link for latest post
 	$rss = file_get_contents('http://apod.nasa.gov/apod.rss', 0, $timeout);
 	if ($rss === false)  { 
-	    print "Service currently unavailable, please try again later! If this problem persists, please report the issue on <a href=\"https://github.com/idleberg/Little-Printer-APOD/issues\">https://github.com/idleberg/Little-Printer-APOD/issues</a>";
-	    return;
+		print "Service currently unavailable, please try again later! If this problem persists, please report the issue on <a href=\"https://github.com/idleberg/Little-Printer-APOD/issues\">https://github.com/idleberg/Little-Printer-APOD/issues</a>";
+		return;
 	} else { 
-	    $rss = new SimpleXMLElement($rss);
+		$rss = new SimpleXMLElement($rss);
 
-	    // Get HTML for latest post
+		// Get HTML for latest post
 		$html = file_get_contents($rss->channel->item[0]->link);
 
 		$doc = new DOMDocument();
@@ -68,7 +68,7 @@
 		<?php if (isset($error)) {
 			echo "<p class=\"uppercase credit\">$error</p>";
 		} else { ?>
-		  	<img class="dither" src="http://apod.nasa.gov/<?php echo $img->attributes->getNamedItem("src")->value; ?>" alt="<?php echo $title ?>" />
+			<img class="dither" src="http://apod.nasa.gov/<?php echo $img->attributes->getNamedItem("src")->value; ?>" alt="<?php echo $title ?>" />
 			<h2>&#8220;<?php echo $title ?>&#8221;</h2>
 			<p class="uppercase credit">&copy; <? echo $credit ?></p>
 			<p class="credit"><a href="http://apod.nasa.gov">apod.nasa.gov</a></p>
