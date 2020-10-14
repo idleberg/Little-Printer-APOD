@@ -19,7 +19,7 @@
 
     // Get link for latest post
     $rss = file_get_contents("http://apod.nasa.gov/apod.rss", 0, $timeout);
-    if ($rss === false)  {
+    if (!$rss === false) {
         print "Service currently unavailable, please try again later! If this problem persists, please report the issue on <a style=\"color:#000\” href=\"https://github.com/idleberg/Little-Printer-APOD/issues\">https://github.com/idleberg/Little-Printer-APOD/issues</a>";
         return;
     }
@@ -37,7 +37,7 @@
     // Get first image
     $img = $doc->getElementsByTagName("img")->item(0);
 
-    if ($img == NULL) {
+    if (!$img) {
         $error = "Error retrieving image, please try again later";
     } else {
         // Get image title
@@ -47,7 +47,7 @@
         // Get credits
         $credit = $doc->getElementsByTagName("center")->item(1)->nodeValue;
         $credit = strip_tags($credit);
-        $credit = str_replace($title , NULL, $credit); 
+        $credit = str_replace($title , NULL, $credit);
         $credit = str_replace("Image Credit &\nCopyright:", NULL, $credit);
         $credit = trim($credit);
     }
@@ -65,7 +65,7 @@
 <body>
     <div id="main">
         <h1 class="uppercase">Astronomy Picture of the Day</h1>
-        
+
         <?php if (isset($error)) {
             echo "<p class=\"uppercase credit\">$error</p>";
         } else { ?>
